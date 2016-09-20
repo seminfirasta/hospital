@@ -1,10 +1,23 @@
 <?php
 
-	include_once 'CSession.class.php';
+	include_once 'CAppointmentController.class.php';
+	include_once 'COperatingRoomController.class.php';
+	include_once 'CPatientModelController.class.php';
+	include_once 'CSessionController.class.php';
+	include_once 'CSessionExecutorController.class.php';
+	include_once 'CStaffController.class.php';
+	include_once 'CStaffTypeController.class.php';
 	
-	// first we need to call controller of operation room and from controller, it will call model in order to fetch and set the data. Tehn will pass the COperationRoom object as follows
+	// FIRST ANSWER
+	$objOperatingRoom = new CSession();
 	
-	$objSession = new CSession();
+	$objSession = new CSessionController();
 	$objSession->getSessionOverview( $objOperatingRoom );
-
+	
+	// SECOND ANSWER
+	$objCStaff = new CStaffController();
+	$objCStaff->getSpecialistOverview();
+	
+	// THIRD ANSWER
+	$objCStaff->isSpecialistAvailable();
 ?>

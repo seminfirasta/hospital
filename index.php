@@ -9,7 +9,7 @@
 	include_once 'CStaffTypeController.class.php';
 	
 	// FIRST ANSWER
-	$objOperatingRoom = new CSession();
+	$objOperatingRoom = new COperatingRoomController();
 	
 	$objSession = new CSessionController();
 	$objSession->getSessionOverview( $objOperatingRoom );

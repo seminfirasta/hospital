@@ -7,9 +7,10 @@
 	include_once 'CSessionExecutorController.class.php';
 	include_once 'CStaffController.class.php';
 	include_once 'CStaffTypeController.class.php';
+	inlude_once 'COperatingRoomModel.php';
 	
 	// FIRST ANSWER
-	$objOperatingRoom = new COperatingRoomController();
+	$objOperatingRoom = new COperatingRoomModel();
 	
 	$objSession = new CSessionController();
 	$objSession->getSessionOverview( $objOperatingRoom );
